@@ -7,12 +7,12 @@ and for caching
 
 ## Caching Features
 
-@todo #1:30 Add more information here about caching
+ @todo #1:30 Add more information here about caching
 Caching headers are fully supported, such as Etags etc.
 
 ### Memory Caching
 
-@todo #1:45 Add some example how to configure max memory etc.
+ @todo #1:45 Add some example how to configure max memory etc.
 
 Based on priority, the memory cache can be used.
 
