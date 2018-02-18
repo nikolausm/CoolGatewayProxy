@@ -7,7 +7,7 @@ and for caching
 
 ## Caching Features
 
- @todo #1:30 Add more information here about caching
+  @todo #1:30 Add more information here about caching
 Caching headers are fully supported, such as Etags etc.
 
 ### Memory Caching
@@ -18,11 +18,46 @@ Based on priority, the memory cache can be used.
 
 ### File Caching
 
+The Filesystem caching should enable a fast access to the filesystem by providing a structure of maximum of 1156 files per directory and max of 1156 of directories by directory.
+
+This will be accomplished ab spearating the filestructure into directory.
+
+Example: mycurrentfilenr18.html, will be stored in my/cu/rr/en/tf/il/en/nr/18.html.
+
+This leads to a very fast access to those files.
+
 ### Database Caching
+
+In addition to the Filecaching it is possible to store Cachfiles into database.
 
 ### Intelligent Resource Update
 
+Depending on how often the files are generated and requested, the internal mechanism will ensure to deliver the most recent file and prevent the generation on request problem. It ensures only cached values are delivered to the client.
+
 ### Simple caching interface
+
+Caching can be set up simple by configuration.
+
+ @todo #1 Add more details to each node.
+<cachingConfigurations>
+  <configuration name="products">
+    <sourcePath>/products</sourcePath>
+    <methods>
+      <method>GET</method>
+    </methods>
+    <parameterSettings>
+      <ignoreOrder>
+        true
+      </ignoreOrder>
+      <ignoreParameters>
+      </ignoreParameters>
+      <cache>
+        <maxDurationInSeconds>600<maxDurationInSeconds>
+        <autoupdate threshold="15">true</autoupdate>
+      <cache>
+    </parameterSettings>
+  </configuration>
+</cachingConfigurations>
 
 ## BFF Features
 
