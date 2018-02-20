@@ -39,6 +39,8 @@ Depending on how often the files are generated and requested, the internal mecha
 Caching can be set up simple by configuration.
 
  @todo #1 Add more details to each node.
+
+
 <cachingConfigurations>
   <configuration name="products">
     <sourcePath>/products</sourcePath>
@@ -58,12 +60,40 @@ Caching can be set up simple by configuration.
     </parameterSettings>
   </configuration>
 </cachingConfigurations>
-
 ## BFF Features
 
+### Routing
+
+<routeConfiguration id="mesh">
+  <incomingRoute>/v1/categories<incomingRoute>
+  <target>
+    {
+      [
+        "replace": {
+          "id": "Brand1",
+          "selector": "$..*"
+          "link": {
+            "href": "https://q-myApp.myDomain.com/categoryService/v1/categories/600000-1"
+          }
+        },
+        "replace": {
+          "id": "Brand1",
+          "selector": "$..*",
+          "link": {
+            "href": "https://q-myApp.myDomain.com/categoryService/v1/categories/600000-2"
+          }
+        }
+      ]
+    }
+  </target>
+  <parametersPassthrough>true</parametersPassthrough>
+</routeConfiguration>
 ### Json Combiner
 
 combines a Json file only by configuring multiple requests.
+
+Will use
+https://github.com/json-path/JsonPath
 
 ### Autoexpand
 
