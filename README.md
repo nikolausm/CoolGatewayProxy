@@ -63,7 +63,10 @@ Caching can be set up simple by configuration.
 ## BFF Features
 
 ### Routing
-
+{
+    location: /v1/categories
+    combine: https://categoryService/v1/categories/600000_1
+}
 <routeConfiguration id="mesh">
   <incomingRoute>/v1/categories<incomingRoute>
   <target>
