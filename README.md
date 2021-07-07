@@ -13,6 +13,7 @@ Caching headers are fully supported, such as Etags etc.
 ### Memory Caching
 
  @todo #1:45 Add some example how to configure max memory etc.
+ @todo #2:00 Test
 
 Based on priority, the memory cache can be used.
 
